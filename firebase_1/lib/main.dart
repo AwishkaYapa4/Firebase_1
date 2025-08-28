@@ -1,5 +1,8 @@
-import 'package:firebase_1/user_login_in.dart';
+import 'package:firebase_1/user/auth/screen/sign_up_screen.dart';
+import 'package:firebase_1/user/auth/screen/user_login_in.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +14,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: UserLoginIn());
+    return ProviderScope(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: UserLoginIn(),
+      ),
+    );
   }
 }
